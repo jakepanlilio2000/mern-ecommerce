@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Heading({ variant = 'small' }) {
+function Heading({ variant = 'small', text }) {
   let classes = "text dark:text "; // default classes
 
   switch (variant) {
@@ -11,7 +11,8 @@ function Heading({ variant = 'small' }) {
       classes += "text-red-500 text-lg font-semibold uppercase";
       break;
     case 'big':
-      classes += "text-4xl font-bold";
+      classes += "text-4xl font-boldhidei \
+      ";
       break;
     case 'small':
     default:
@@ -19,7 +20,7 @@ function Heading({ variant = 'small' }) {
       break;
   }
 
-  return <span className={classes}>Heading</span>;
+  return <span className={classes}>{text}</span>;
 }
 
 export default Heading;
