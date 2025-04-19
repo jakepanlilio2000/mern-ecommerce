@@ -1,6 +1,6 @@
 import React from 'react'
 
-function carousell(imagePaths) {
+function Carousell(imagePaths) {
     
   return (
     <div>
@@ -11,4 +11,4 @@ function carousell(imagePaths) {
   )
 }
 
-export default carousell
+export default Carousell
