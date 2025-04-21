@@ -3,7 +3,7 @@ import React from 'react'
 function Carousell(imagePaths) {
     
   return (
-    <div>
+    <div className="">
         {imagePaths.map((path, index) => {
             return <img src={path} key={index} alt="carousell picture" />
         })} 
