@@ -1,7 +1,13 @@
 import React from "react";
 import Slider from "react-slick";
+import { Items } from "../../types/global";
 
-function Carousell(imagePaths) {
+interface CarousellProps{
+  items: Items[];
+}
+
+
+function Carousell({items}: CarousellProps) {
   const settings = {
     className: "center",
     centerMode: true,
@@ -13,10 +19,12 @@ function Carousell(imagePaths) {
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        {imagePaths.map((path, index) => {
+        {items.map((item, index) => {
           return (
             <div>
-              <img src={path} key={index} alt="carousell picture" />
+              {item.title}
+              {item.description}
+              <img src={item.imgPath} key={index} alt="carousell picture" />
             </div>
           );
         })}
