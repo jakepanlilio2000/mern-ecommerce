@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import AppLogo from "./ui/app-logo";
+import SearchBar from "./ui/search-bar";
 
 interface NavProps {
   companyName: string;
@@ -9,11 +10,12 @@ interface NavProps {
 function Nav({ companyName }: NavProps) {
   return (
     <nav>
-      <div>
+      <div className="flex">
         <div>
           <AppLogo></AppLogo>
           <span>{companyName}</span>
         </div>
+        <SearchBar></SearchBar>
       </div>
       <div>
         <Link href="/">Home</Link>
