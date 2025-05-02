@@ -10,12 +10,15 @@ interface NavProps {
 function Nav({ companyName }: NavProps) {
   return (
     <nav>
-      <div className="flex">
-        <div>
+      <div className="flex justify-around">
+        <div className="flex justify-center align-center">
           <AppLogo></AppLogo>
           <span>{companyName}</span>
         </div>
         <SearchBar></SearchBar>
+        <div>
+          <button></button>
+        </div>
       </div>
       <div className="flex justify-center items-center gap-3 py-2">
         <Link href="/">Home</Link>
