@@ -7,7 +7,7 @@ export default function Home() {
         {/* Announcement */}
         <h1>20% off everything</h1>
         {/* Carousel */}
-        <section className="flex justify-center items-center rounded-b-[250px] bg-linear-to-b from-white to-[#D9D9D9] border-black border">
+        <section className="flex justify-center items-center rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
           
         </section>
         {/* best seller */}
