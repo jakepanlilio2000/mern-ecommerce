@@ -17,7 +17,7 @@ function Nav({ companyName }: NavProps) {
         </div>
         <SearchBar></SearchBar>
       </div>
-      <div>
+      <div className="flex justify-center items-center gap-3 py-2">
         <Link href="/">Home</Link>
         <Link href="/about">About Us</Link>
         <Link href="/contact">Contact Us</Link>

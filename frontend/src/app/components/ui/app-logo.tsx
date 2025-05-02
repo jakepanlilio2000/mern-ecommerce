@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Image from "next/image";
 
 function AppLogo() {
   return (
-    <img src="https://picsum.photos/id/237/200/300" alt="App Logo" className="rounded-full h-5 w-5"/>
-  )
+    <Image
+      src="/images/logo.png"
+      height="10"
+      width="10"
+      alt="App Logo"
+      className="rounded-full h-5 w-5"
+    />
+  );
 }
 
-export default AppLogo
+export default AppLogo;
