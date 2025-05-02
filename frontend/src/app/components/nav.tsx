@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import AppLogo from "./ui/app-logo";
 import SearchBar from "./ui/search-bar";
+import AuthButtons from "./auth-buttons";
 
 interface NavProps {
   companyName: string;
@@ -20,6 +21,7 @@ function Nav({ companyName }: NavProps) {
           <button>1</button>
           <button>2</button>
         </div>
+        <AuthButtons></AuthButtons>
       </div>
       <div className="flex justify-center items-center gap-3 py-2">
         <Link href="/">Home</Link>
