@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-function HeaderDefiner() {
+interface HeaderDefinerProps {
+  className?: string;
+  children: React.ReactNode
+}
+
+function HeaderDefiner({className, children}: HeaderDefinerProps) {
   return (
-    <h3>HeaderDefiner</h3>
+    <h3 className={`text-2xl ${className}`}>{children}</h3>
   )
 }
 
