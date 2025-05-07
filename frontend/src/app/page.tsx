@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Carousel from "./components/carousel";
+import HeaderAnnouncement from "./components/ui/headerAnnouncement";
 
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
     <div className="">
       <main>
         {/* Announcement */}
-        <h1>20% off everything</h1>
+        <HeaderAnnouncement>20% off everything</HeaderAnnouncement>
         {/* Carousel */}
         <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
           <Carousel></Carousel>
