@@ -23,34 +23,36 @@ function Footer() {
         })}
       </div>
       {/* information */}
-      <div className="grid grid-cols-3 gap-4 grid-rows-2">
-        <div className="row-span-2">
-          <HeaderDefiner>Customer Service</HeaderDefiner>
-          <ul>
-            <li>Home</li>
-            <li>Track an Order</li>
-            <li>Cancel an Order</li>
-            <li>Payment FAQs</li>
-            <li>Return and Refund</li>
-          </ul>
-        </div>
-        <div className="row-span-2">
-          <HeaderDefiner>Company</HeaderDefiner>
-          <ul>
-            <li>Careers</li>
-            <li>About Us</li>
-            <li>FAQs</li>
-            <li>Store Location</li>
-            <li>News and Articles</li>
-          </ul>
-        </div>
-        <div className="">
-          <HeaderDefiner>Follow Us</HeaderDefiner>
-          {/* socials */}
-        </div>
-        <div>
-          <HeaderDefiner>Brand Name</HeaderDefiner>
-          <AppLogo></AppLogo>
+      <div className="text-white bg-[#505050]">
+        <div className="mx-auto max-w-7xl py-10 grid grid-cols-3 gap-4 grid-rows-2 justify-items-center">
+          <div className="row-span-2">
+            <HeaderDefiner>Customer Service</HeaderDefiner>
+            <ul className="flex flex-col gap-3 mt-3">
+              <li>Home</li>
+              <li>Track an Order</li>
+              <li>Cancel an Order</li>
+              <li>Payment FAQs</li>
+              <li>Return and Refund</li>
+            </ul>
+          </div>
+          <div className="row-span-2">
+            <HeaderDefiner>Company</HeaderDefiner>
+            <ul className="flex flex-col gap-3 mt-3">
+              <li>Careers</li>
+              <li>About Us</li>
+              <li>FAQs</li>
+              <li>Store Location</li>
+              <li>News and Articles</li>
+            </ul>
+          </div>
+          <div className="">
+            <HeaderDefiner>Follow Us</HeaderDefiner>
+            {/* socials */}
+          </div>
+          <div>
+            <HeaderDefiner>Brand Name</HeaderDefiner>
+            <AppLogo></AppLogo>
+          </div>
         </div>
       </div>
     </footer>
