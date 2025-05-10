@@ -10,7 +10,7 @@ function ProfileIcon({ src }: { src: string }) {
   };
   
   return (
-    <img src={getIcon()} alt="Profile Icon" className="rounded-full h-5 w-5" />
+    <img src={getIcon()} alt="Profile Icon" className="rounded-full size-9" />
   );
 }
 
