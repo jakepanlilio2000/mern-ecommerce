@@ -16,7 +16,7 @@ function Footer() {
       <div className="bg-primary flex">
         {CARDS.map((item, index) => {
           return (
-            <div>
+            <div className="">
               <img src={item.img} alt={item.title} className="" />
             </div>
           );
