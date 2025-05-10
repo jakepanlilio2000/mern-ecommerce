@@ -2,22 +2,19 @@ import Image from "next/image";
 import Carousel from "./components/carousel";
 import HeaderAnnouncement from "./components/ui/headerAnnouncement";
 
-
 export default function Home() {
   return (
-    <div className="">
-      <main>
-        {/* Announcement */}
-        <HeaderAnnouncement>20% off everything</HeaderAnnouncement>
-        {/* Carousel */}
-        <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
-          <Carousel></Carousel>
-        </section>
-        {/* best seller */}
-        {/* new arrivals */}
-        {/* on sale */}
-        {/* customer review */}
-      </main>
-    </div>
+    <>
+      {/* Announcement */}
+      <HeaderAnnouncement>20% off everything</HeaderAnnouncement>
+      {/* Carousel */}
+      <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
+        <Carousel></Carousel>
+      </section>
+      {/* best seller */}
+      {/* new arrivals */}
+      {/* on sale */}
+      {/* customer review */}
+    </>
   );
 }

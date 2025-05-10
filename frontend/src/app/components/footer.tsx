@@ -2,22 +2,40 @@ import React from "react";
 import HeaderDefiner from "./ui/headerDefiner";
 import AppLogo from "./ui/app-logo";
 
+import Image from 'next/image'
+
 function Footer() {
   const CARDS = [
     {
+      title: "cod",
+      img: "/images/cod.png",
+    },
+    {
+      title: "mastercard",
+      img: "/images/mastercard.png",
+    },
+    {
+      title: "shopee",
+      img: "/images/shopee.png",
+    },
+    {
       title: "gcash",
-      img: "https://picsum.photos/200/300",
+      img: "/images/gcash.png",
+    },
+    {
+      title: "paymaya",
+      img: "/images/paymaya.png",
     },
   ];
 
   return (
-    <footer>
+    <footer className="">
       {/* cards */}
-      <div className="bg-primary flex">
+      <div className="bg-primary flex justify-between items-center mx-auto max-w-7xl py-15">
         {CARDS.map((item, index) => {
           return (
             <div className="">
-              <img src={item.img} alt={item.title} className="" />
+              <Image src={item.img} alt={item.title} width="90" height="90" />
             </div>
           );
         })}
