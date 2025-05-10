@@ -168,6 +168,7 @@ function Nav({ companyName }: NavProps) {
                   href={item.href}
                   className="text-black font-bold px-3 py-2 text-sm hover:underline"
                   aria-current="page"
+                  key={`${index}_web`}
                 >
                   {item.name}
                 </Link>
@@ -190,6 +191,7 @@ function Nav({ companyName }: NavProps) {
                 href={item.href}
                 className="block rounded-md px-3 py-2 text-base font-medium text-black hover:underline"
                 aria-current="page"
+                key={`${index}_mobile`}
               >
                 {item.name}
               </Link>

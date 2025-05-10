@@ -9,7 +9,7 @@ export default function Home() {
       <HeaderAnnouncement>20% off everything</HeaderAnnouncement>
       {/* Carousel */}
       <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
-        <Carousel></Carousel>
+        {/* <Carousel></Carousel> error here gives extra space fix */}
       </section>
       {/* best seller */}
       {/* new arrivals */}
