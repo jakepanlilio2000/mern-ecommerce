@@ -3,12 +3,11 @@ import React from 'react'
 interface HeaderSeperatorProps{
   className?: string;
   children: React.ReactNode
-  withHr: boolean
 }
 
-function HeaderSeperator({className, children,withHr}: HeaderSeperatorProps) {
+function HeaderSeperator({className, children}: HeaderSeperatorProps) {
   return (
-    <h2 className={`text-2xl ${className}`}>{children}</h2>
+    <h2 className={`text-2xl uppercase ${className}`}>{children}</h2>
   )
 }
 
