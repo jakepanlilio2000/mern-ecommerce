@@ -5,6 +5,8 @@ import AppLogo from "./ui/app-logo";
 import SearchBar from "./ui/search-bar";
 import AuthButtons from "./auth-buttons";
 import ProfileIcon from "./ui/profile-icon";
+import HeartButton from "./heart-button";
+import CartButton from "./cart-button";
 
 interface NavProps {
   companyName: string;
@@ -94,6 +96,10 @@ function Nav({ companyName }: NavProps) {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <SearchBar></SearchBar>
+            </div>
+            <div className="flex gap-4">
+              <HeartButton></HeartButton>
+              <CartButton></CartButton>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <div className="relative ml-3">

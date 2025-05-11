@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProfileIcon({ src }: { src: string }) {
+function ProfileIcon({ src, className }: { src: string, className?: string }) {
 
   const getIcon = (): string => {
     if (!src || src.trim() === "") {
@@ -10,7 +10,7 @@ function ProfileIcon({ src }: { src: string }) {
   };
   
   return (
-    <img src={getIcon()} alt="Profile Icon" className="rounded-full size-9" />
+    <img src={getIcon()} alt="Profile Icon" className={`${className} rounded-full size-9`} />
   );
 }
 
