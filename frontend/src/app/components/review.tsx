@@ -15,11 +15,11 @@ function Review({avatar, stars, review}: ReviewProps) {
 
   return (
     // must be incase in parent div with flex(?)
-    <div className="rounded-lg bg-primary flex flex-col justify-center items-center">
+    <div className="rounded-lg bg-primary flex flex-col justify-center items-center size-70 relative py-10">
         <Stars rate={stars}></Stars>
         <h4 className="text-2xl">{getInterpretation(stars)}</h4>
-        <p className="">{review}</p>
-        <ProfileIcon src={avatar}></ProfileIcon>
+        <p className="grow text-center line-clamp-6 w-60">{review}</p>
+        <ProfileIcon src={avatar} className="size-12 absolute left-1/2 -translate-x-1/2 -bottom-5"></ProfileIcon>
     </div>
   )
 }
