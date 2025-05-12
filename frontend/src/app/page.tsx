@@ -2,6 +2,7 @@ import Image from "next/image";
 import Carousel from "./components/carousel";
 import HeaderAnnouncement from "./components/ui/headerAnnouncement";
 import HeaderSeperator from "./components/ui/headerSeperator";
+import Review from "./components/review";
 
 export default function Home() {
   return (
@@ -18,6 +19,13 @@ export default function Home() {
       {/* customer review */}
       <section className=" bg-linear-to-b from-primary to-secondary">
         <HeaderSeperator>Customer reviews</HeaderSeperator>
+        <div className="flex">
+          {
+            [...Array(3)].map((_, i) => (
+              <Review stars={4} avatar="" review="its okay"></Review>
+            ))
+          }
+        </div>
       </section>
     </>
   );
