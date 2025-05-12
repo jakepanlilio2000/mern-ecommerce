@@ -97,7 +97,7 @@ function Nav({ companyName }: NavProps) {
             <div className="hidden sm:ml-6 sm:block">
               <SearchBar></SearchBar>
             </div>
-            <div className="flex gap-4">
+            <div className="gap-4 hidden sm:ml-6 sm:flex">
               <HeartButton></HeartButton>
               <CartButton></CartButton>
             </div>
