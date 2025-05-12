@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 
-function HeartButton() {
+function HeartButton({className}: {className?: string}) {
   return (
-    <button>
+    <button className={`${className}`}>
         <FontAwesomeIcon icon={faHeart} />
     </button>
   )
