@@ -1,25 +1,85 @@
+"use client"
 import Image from "next/image";
 import Carousel from "./components/carousel";
-
-
-const SLIDE_COUNT = 3
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+import HeaderAnnouncement from "./components/ui/headerAnnouncement";
+import HeaderSeperator from "./components/ui/headerSeperator";
+import Review from "./components/review";
+import ButtonHelper from "./components/ui/button-helper";
+import Slider from "react-slick";
+import ProductDisplay from "./components/product-display";
 
 export default function Home() {
+  const CAROUSEL_SETTINGS_2 = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+
   return (
-    <div className="">
-      <main>
-        {/* Announcement */}
-        <h1>20% off everything</h1>
-        {/* Carousel */}
-        <section className="flex justify-center items-center rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
-          <Carousel slides={SLIDES}></Carousel>
-        </section>
-        {/* best seller */}
-        {/* new arrivals */}
-        {/* on sale */}
-        {/* customer review */}
-      </main>
-    </div>
+    <>
+      {/* Announcement */}
+      <HeaderAnnouncement>20% off everything</HeaderAnnouncement>
+      {/* Carousel */}
+      <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
+        {/* <Carousel></Carousel> error here gives extra space fix */}
+      </section>
+      {/* best seller */}
+      {/* new arrivals */}
+      {/* on sale */}
+      <section>
+        <div className="flex flex-col justify-center items-center mx-auto max-w-7xl flex-grow">
+          <div className="self-stretch flex justify-center items-center">
+            <HeaderSeperator className="text-red font-bold">
+              On sale
+            </HeaderSeperator>
+            <hr className="grow" />
+            <ButtonHelper>See more</ButtonHelper>
+          </div>
+          <div className="self-stretch">
+            <ProductDisplay title="some" img="" genre="dress" stars="4.5" origPrice={5000} currentPrice={4500}></ProductDisplay>
+          {/* <Slider {...CAROUSEL_SETTINGS_2}>
+            <div>
+              <h3>1</h3>
+            </div>
+            <div>
+              <h3>2</h3>
+            </div>
+            <div>
+              <h3>3</h3>
+            </div>
+            <div>
+              <h3>4</h3>
+            </div>
+            <div>
+              <h3>5</h3>
+            </div>
+            <div>
+              <h3>6</h3>
+            </div>
+          </Slider> */}
+          </div>
+        </div>
+      </section>
+      {/* customer review */}
+      <section className="bg-linear-to-b from-primary to-secondary min-h-[360px] py-15 sm:max-h-[1000px] flex">
+        <div className="flex flex-col justify-center items-center mx-auto max-w-7xl flex-grow">
+          <HeaderSeperator className="text-center mb-4 font-bold">
+            Customer reviews
+          </HeaderSeperator>
+          <div className="flex justify-center lg:justify-between gap-3 flex-wrap md:self-stretch">
+            {[...Array(3)].map((_, i) => (
+              <Review
+                key={i}
+                stars={4}
+                avatar=""
+                review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor massa non neque gravida venenatis. Vestibulum bibendum, sem a ultricies maximus, felis nulla ultricies quam, eget molestie nisl velit at ipsum. Nunc tellus elit, cursus elementum lorem id, tempor venenatis sapien. Praesent justo justo, sollicitudin maximus molestie eu, scelerisque eu orci. Cras id arcu non sem tristique fringilla. Donec felis magna, sollicitudin et risus eget, luctus pretium massa. In gravida pulvinar pulvinar. Aliquam varius ornare urna, eget aliquam erat suscipit auctor. Duis aliquam odio facilisis nibh dapibus ultrices. Aenean non tortor erat. Ut eleifend nulla et lorem interdum, non posuere sem luctus. Quisque ac ornare turpis, id dictum ex."
+              ></Review>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
