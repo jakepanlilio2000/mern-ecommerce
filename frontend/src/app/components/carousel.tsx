@@ -1,40 +1,52 @@
-"use client"
-import Reac from 'react'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// "use client";
+import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-const Carousel = () => {
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500
+const CarouselComp = ({
+  withZoom,
+  children,
+}: {
+  withZoom: boolean;
+  children: React.ReactNode;
+}) => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
+  const zoomHighLight = () => {
+    // add and remove classes for zooming
+    if (!withZoom) return;
   };
 
   return (
-    <div className="slider-container">
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-      </Slider>
-    </div>
-  )
-}
+    <Carousel
+      responsive={responsive}
+      centerMode={true}
+      infinite={true}
+      afterChange={(previousSlide, { currentSlide, onMove }) => {
+        zoomHighLight();
+      }}
+    >
+      {children}
+    </Carousel>
+  );
+};
 
-export default Carousel
+export default CarouselComp;

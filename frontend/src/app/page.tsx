@@ -1,29 +1,29 @@
-"use client"
-import Image from "next/image";
-import Carousel from "./components/carousel";
+"use client";
+import CarouselComp from "./components/carousel";
 import HeaderAnnouncement from "./components/ui/headerAnnouncement";
 import HeaderSeperator from "./components/ui/headerSeperator";
 import Review from "./components/review";
 import ButtonHelper from "./components/ui/button-helper";
-import Slider from "react-slick";
 import ProductDisplay from "./components/product-display";
 
 export default function Home() {
-  const CAROUSEL_SETTINGS_2 = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
-
   return (
     <>
       {/* Announcement */}
       <HeaderAnnouncement>20% off everything</HeaderAnnouncement>
       {/* Carousel */}
       <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
-        {/* <Carousel></Carousel> error here gives extra space fix */}
+        <CarouselComp>
+          <div>
+            <h3>1</h3>
+          </div>
+          <div>
+            <h3>2</h3>
+          </div>
+          <div>
+            <h3>3</h3>
+          </div>
+        </CarouselComp>
       </section>
       {/* best seller */}
       {/* new arrivals */}
@@ -38,8 +38,15 @@ export default function Home() {
             <ButtonHelper>See more</ButtonHelper>
           </div>
           <div className="self-stretch">
-            <ProductDisplay title="some" img="" genre="dress" stars="4.5" origPrice={5000} currentPrice={4500}></ProductDisplay>
-          {/* <Slider {...CAROUSEL_SETTINGS_2}>
+            <ProductDisplay
+              title="some"
+              img=""
+              genre="dress"
+              stars="4.5"
+              origPrice={5000}
+              currentPrice={4500}
+            ></ProductDisplay>
+            {/* <Slider {...CAROUSEL_SETTINGS_2}>
             <div>
               <h3>1</h3>
             </div>
