@@ -1,5 +1,5 @@
-// "use client";
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -30,22 +30,27 @@ const CarouselComp = ({
     },
   };
 
-  const zoomHighLight = () => {
-    // add and remove classes for zooming
-    if (!withZoom) return;
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const zoomHighLight = (previousSlide: number, currentSlide: number) => {
+    if (!withZoom || !carouselRef.current) return;
+    
   };
 
   return (
-    <Carousel
-      responsive={responsive}
-      centerMode={true}
-      infinite={true}
-      afterChange={(previousSlide, { currentSlide, onMove }) => {
-        zoomHighLight();
-      }}
-    >
-      {children}
-    </Carousel>
+    <div ref={carouselRef}>
+      <Carousel
+        responsive={responsive}
+        infinite={true}
+        itemClass="flex justify-center"
+        afterChange={(previousSlide, { currentSlide }) => {
+          zoomHighLight(previousSlide, currentSlide);
+        }}
+        containerClass="carousel-container"
+      >
+        {children}
+      </Carousel>
+    </div>
   );
 };
 

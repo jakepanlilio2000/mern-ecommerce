@@ -13,14 +13,14 @@ export default function Home() {
       <HeaderAnnouncement>20% off everything</HeaderAnnouncement>
       {/* Carousel */}
       <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
-        <CarouselComp>
-          <div>
+        <CarouselComp withZoom={true}>
+          <div className="border">
             <h3>1</h3>
           </div>
-          <div>
+          <div className="border">
             <h3>2</h3>
           </div>
-          <div>
+          <div className="border">
             <h3>3</h3>
           </div>
         </CarouselComp>
@@ -38,34 +38,32 @@ export default function Home() {
             <ButtonHelper>See more</ButtonHelper>
           </div>
           <div className="self-stretch">
-            <ProductDisplay
-              title="some"
-              img=""
-              genre="dress"
-              stars="4.5"
-              origPrice={5000}
-              currentPrice={4500}
-            ></ProductDisplay>
-            {/* <Slider {...CAROUSEL_SETTINGS_2}>
-            <div>
-              <h3>1</h3>
-            </div>
-            <div>
-              <h3>2</h3>
-            </div>
-            <div>
-              <h3>3</h3>
-            </div>
-            <div>
-              <h3>4</h3>
-            </div>
-            <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
-          </Slider> */}
+            <CarouselComp withZoom={false}>
+              <ProductDisplay
+                title="some"
+                img=""
+                genre="dress"
+                stars="4.5"
+                origPrice={5000}
+                currentPrice={4500}
+              ></ProductDisplay>
+              <ProductDisplay
+                title="some"
+                img=""
+                genre="dress"
+                stars="4.5"
+                origPrice={5000}
+                currentPrice={4500}
+              ></ProductDisplay>
+              <ProductDisplay
+                title="some"
+                img=""
+                genre="dress"
+                stars="4.5"
+                origPrice={5000}
+                currentPrice={4500}
+              ></ProductDisplay>
+            </CarouselComp>
           </div>
         </div>
       </section>
