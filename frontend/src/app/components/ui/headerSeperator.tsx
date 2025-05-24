@@ -7,7 +7,7 @@ interface HeaderSeperatorProps{
 
 function HeaderSeperator({className, children}: HeaderSeperatorProps) {
   return (
-    <h2 className={`text-2xl uppercase ${className}`}>{children}</h2>
+    <h2 className={`text-4xl uppercase ${className}`}>{children}</h2>
   )
 }
 

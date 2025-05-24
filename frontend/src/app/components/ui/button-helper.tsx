@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ButtonHelper({children}: {children: React.ReactNode}) {
+function ButtonHelper({className, children}: {className?:string, children: React.ReactNode}) {
   return (
-    <button>{children}</button>
+    <button className={className}>{children}</button>
   )
 }
 

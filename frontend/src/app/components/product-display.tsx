@@ -43,15 +43,15 @@ function ProductDisplay({
           <p className="text-sm text-center">Short </p>
         </div>
       </div>
-      <div className="grid grid-cols-10 text-white">
+      <div className="grid grid-cols-10 text-white gap-y-2">
         <span className="col-span-8">{title}</span>
         <span className="col-span-2">{stars} &#9733;</span>
         <span className="col-span-5 bg-black text-white rounded-md capitalize px-2 items-center">
           {" "}
           {genre}
         </span>
-        <span className="col-span-10 line-through">{origPrice}</span>
-        <span className="col-span-10">{currentPrice}$</span>
+        <span className="col-span-10 line-through">{origPrice}$</span>
+        <span className="col-span-10 text-2xl -mt-2">{currentPrice}$</span>
         <button className="col-span-7 rounded-full bg-white text-black">
           Buy
         </button>
