@@ -6,29 +6,109 @@ import Review from "./components/review";
 import ButtonHelper from "./components/ui/button-helper";
 import ProductDisplay from "./components/product-display";
 
+// might need to refactor best seller, on sale, etc
+
 export default function Home() {
   return (
     <>
       {/* Announcement */}
-      <HeaderAnnouncement>20% off everything</HeaderAnnouncement>
+      <HeaderAnnouncement className="bg-secondary text-center text-6xl uppercase font-semibold py-5">20% off everything</HeaderAnnouncement>
       {/* Carousel */}
-      <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary border-black border">
-        <CarouselComp withZoom={true}>
-          <div className="border">
-            <h3>1</h3>
+      <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary">
+        <CarouselComp withZoom={true} classToAdd="scale-150">
+          <div>
+            <img src="https://picsum.photos/200/300" alt="" className="h-[200px] w-[300px]"/>
           </div>
-          <div className="border">
-            <h3>2</h3>
+          <div>
+            <img src="https://picsum.photos/200/300" alt="" className="h-[200px] w-[300px]" />
           </div>
-          <div className="border">
-            <h3>3</h3>
+          <div>
+            <img src="https://picsum.photos/200/300" alt="" className="h-[200px] w-[300px]" />
           </div>
         </CarouselComp>
       </section>
       {/* best seller */}
+      <section className="mb-10">
+        <div className="flex flex-col justify-center items-center mx-auto max-w-7xl flex-grow">
+          <div className="self-stretch flex justify-center items-center">
+            <HeaderSeperator className="text-yellow-400 font-bold flex justify-center gap-2 items-center me-2">
+              best seller
+            </HeaderSeperator>
+            <hr className="grow" />
+            <ButtonHelper className="uppercase">See more</ButtonHelper>
+          </div>
+          <div className="self-stretch">
+            <CarouselComp withZoom={false}>
+              <ProductDisplay
+                title="some"
+                img=""
+                genre="dress"
+                stars="4.5"
+                origPrice={5000}
+                currentPrice={4500}
+              ></ProductDisplay>
+              <ProductDisplay
+                title="some"
+                img=""
+                genre="dress"
+                stars="4.5"
+                origPrice={5000}
+                currentPrice={4500}
+              ></ProductDisplay>
+              <ProductDisplay
+                title="some"
+                img=""
+                genre="dress"
+                stars="4.5"
+                origPrice={5000}
+                currentPrice={4500}
+              ></ProductDisplay>
+            </CarouselComp>
+          </div>
+        </div>
+      </section>
       {/* new arrivals */}
+      <section className="mb-10">
+        <div className="flex flex-col justify-center items-center mx-auto max-w-7xl flex-grow">
+          <div className="self-stretch flex justify-center items-center">
+            <HeaderSeperator className="text-red-500 font-bold flex justify-center gap-2 items-center me-2">
+              New arrivals
+            </HeaderSeperator>
+            <hr className="grow" />
+            <ButtonHelper className="uppercase">See more</ButtonHelper>
+          </div>
+          <div className="self-stretch">
+            <CarouselComp withZoom={false}>
+              <ProductDisplay
+                title="some"
+                img=""
+                genre="dress"
+                stars="4.5"
+                origPrice={5000}
+                currentPrice={4500}
+              ></ProductDisplay>
+              <ProductDisplay
+                title="some"
+                img=""
+                genre="dress"
+                stars="4.5"
+                origPrice={5000}
+                currentPrice={4500}
+              ></ProductDisplay>
+              <ProductDisplay
+                title="some"
+                img=""
+                genre="dress"
+                stars="4.5"
+                origPrice={5000}
+                currentPrice={4500}
+              ></ProductDisplay>
+            </CarouselComp>
+          </div>
+        </div>
+      </section>
       {/* on sale */}
-      <section>
+      <section className="mb-10">
         <div className="flex flex-col justify-center items-center mx-auto max-w-7xl flex-grow">
           <div className="self-stretch flex justify-center items-center">
             <HeaderSeperator className="text-red-500 font-bold flex justify-center gap-2 items-center me-2">

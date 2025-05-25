@@ -33,7 +33,7 @@ function ProductDisplay({
 
         {/* Image */}
         <img
-          src="https://picsum.photos/200/300"
+          src={img}
           alt=""
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />

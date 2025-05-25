@@ -6,9 +6,11 @@ import "react-multi-carousel/lib/styles.css";
 const CarouselComp = ({
   withZoom,
   children,
+  classToAdd
 }: {
   withZoom: boolean;
   children: React.ReactNode;
+  classToAdd?: string;
 }) => {
   const responsive = {
     superLargeDesktop: {
