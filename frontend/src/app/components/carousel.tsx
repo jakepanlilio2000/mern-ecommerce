@@ -50,7 +50,7 @@ const CarouselComp = ({
           mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
         }}
         infinite
-        itemClass="transition-transform duration-300 ease-in-out"
+        itemClass="flex justify-center items-center transition-transform duration-300 ease-in-out"
         afterChange={() => zoomHighLight()}
         containerClass="carousel-container"
       >

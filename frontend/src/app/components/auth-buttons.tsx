@@ -1,6 +1,9 @@
 import React from 'react'
 import Button from './ui/button'
 
+
+// to be modified
+// situational either profile circle or grp buttons
 function AuthButtons() {
   return (
     <div>
