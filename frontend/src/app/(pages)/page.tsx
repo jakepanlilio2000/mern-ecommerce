@@ -1,10 +1,10 @@
 "use client";
-import CarouselComp from "./components/carousel";
-import HeaderAnnouncement from "./components/ui/headerAnnouncement";
-import HeaderSeperator from "./components/ui/headerSeperator";
-import Review from "./components/review";
-import ButtonHelper from "./components/ui/button-helper";
-import ProductDisplay from "./components/product-display";
+import CarouselComp from "../components/carousel";
+import HeaderAnnouncement from "../components/ui/headerAnnouncement";
+import HeaderSeperator from "../components/ui/headerSeperator";
+import Review from "../components/review";
+import ButtonHelper from "../components/ui/button-helper";
+import ProductDisplay from "../components/product-display";
 
 // might need to refactor best seller, on sale, etc
 
