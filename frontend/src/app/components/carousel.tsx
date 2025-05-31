@@ -1,40 +1,63 @@
-"use client"
-import Reac from 'react'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+/* CarouselComp.tsx */
+"use client";
+import React, { useEffect, useRef } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-const Carousel = () => {
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500
+const CarouselComp = ({
+  withZoom,
+  children,
+  classToAdd = '',
+}: {
+  withZoom: boolean;
+  children: React.ReactNode;
+  classToAdd?: string;
+}) => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const zoomHighLight = () => {
+    if (!withZoom || !carouselRef.current) return;
+
+    const activeItems = carouselRef.current.querySelectorAll(
+      ".react-multi-carousel-item--active"
+    );
+
+    if (activeItems.length === 0) return;
+
+    const middleIndex = Math.floor(activeItems.length / 2);
+
+    activeItems.forEach((item, index) => {
+      if (index === middleIndex) {
+        item.classList.add(classToAdd);
+      } else {
+        item.classList.remove(classToAdd);
+      }
+    });
   };
 
-  return (
-    <div className="slider-container">
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-      </Slider>
-    </div>
-  )
-}
+  useEffect(() => {
+    // Initial zoom after mount
+    zoomHighLight();
+  }, []);
 
-export default Carousel
+  return (
+    <div ref={carouselRef} className="relative">
+      <Carousel
+        responsive={{
+          superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 5 },
+          desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3 },
+          tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
+          mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
+        }}
+        infinite
+        itemClass="flex justify-center items-center transition-transform duration-300 ease-in-out"
+        afterChange={() => zoomHighLight()}
+        containerClass="carousel-container"
+      >
+        {children}
+      </Carousel>
+    </div>
+  );
+};
+
+export default CarouselComp;

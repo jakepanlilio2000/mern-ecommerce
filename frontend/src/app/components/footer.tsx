@@ -34,7 +34,7 @@ function Footer() {
       <div className="bg-primary flex justify-between items-center mx-auto max-w-7xl py-15">
         {CARDS.map((item, index) => {
           return (
-            <div className="">
+            <div key={`${index}_img`} className="">
               <Image src={item.img} alt={item.title} width="90" height="90" />
             </div>
           );
