@@ -10,6 +10,9 @@
   --secondary: #D9D9D9;
   --third: #A4A4A4;
 
+  --auth-bg: #DDDCDC;
+  --auth-modal-bg: #D9D9D9;
+
   --font-display: "Outfit"
 }
 
@@ -22,6 +25,9 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-third: var(--third);
+
+  --color-auth-bg: var(--auth-bg);
+  --color-auth-modal-bg: var(--auth-modal-bg);
 }
 
 @media (prefers-color-scheme: dark) {

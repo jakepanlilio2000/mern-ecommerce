@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       {/* Announcement */}
-      <HeaderAnnouncement className="bg-secondary text-center text-6xl uppercase font-semibold py-5">20% off everything</HeaderAnnouncement>
+      <HeaderAnnouncement className="bg-auth-bg text-center text-6xl uppercase font-semibold py-5">20% off everything</HeaderAnnouncement>
       {/* Carousel */}
       <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary">
         <CarouselComp withZoom={true} classToAdd="scale-150">

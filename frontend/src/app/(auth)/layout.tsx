@@ -3,5 +3,5 @@ export default function AuthLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="grow bg-third">{children}</div>;
+  return <main className="grow bg-auth-bg flex justify-center items-center">{children}</main>;
 }
