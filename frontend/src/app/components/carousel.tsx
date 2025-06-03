@@ -49,7 +49,8 @@ const CarouselComp = ({
           tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
           mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
         }}
-        infinite
+        infinite={false}
+        rewind={true}
         itemClass="flex justify-center items-center transition-transform duration-300 ease-in-out"
         afterChange={() => zoomHighLight()}
         containerClass="carousel-container"

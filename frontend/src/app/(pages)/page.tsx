@@ -25,6 +25,12 @@ export default function Home() {
           <div>
             <img src="https://picsum.photos/200/300" alt="" className="h-[200px] w-[300px]" />
           </div>
+          <div>
+            <img src="https://picsum.photos/200/300" alt="" className="h-[200px] w-[300px]" />
+          </div>
+          <div>
+            <img src="https://picsum.photos/200/300" alt="" className="h-[200px] w-[300px]" />
+          </div>
         </CarouselComp>
       </section>
       {/* best seller */}
