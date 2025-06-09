@@ -4,7 +4,6 @@ import Link from "next/link";
 import AppLogo from "./ui/app-logo";
 import SearchBar from "./ui/search-bar";
 import AuthButtons from "./auth-buttons";
-import ProfileIcon from "./ui/profile-icon";
 import HeartButton from "./heart-button";
 import CartButton from "./cart-button";
 
@@ -37,8 +36,6 @@ function Nav({ companyName }: NavProps) {
   ];
 
   const [navOpen, setNavOpen] = useState(false);
-  const [profileOpen, setProfileOpen] = useState(false);
-
   return (
     <nav className="">
       <div className="bg-third">
@@ -103,58 +100,7 @@ function Nav({ companyName }: NavProps) {
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <div className="relative ml-3">
-                <div>
-                  <button
-                    type="button"
-                    className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden hover:cursor-pointer"
-                    id="user-menu-button"
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                    onClick={() => setProfileOpen(!profileOpen)}
-                  >
-                    <span className="absolute -inset-1.5"></span>
-                    <span className="sr-only">Open user menu</span>
-                    <ProfileIcon src="https://picsum.photos/200/300"></ProfileIcon>
-                  </button>
-                </div>
-
-                <div
-                  className={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 ${
-                    profileOpen ? "block" : "hidden"
-                  }`}
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="user-menu-button"
-                  tabIndex={-1}
-                >
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    tabIndex={-1}
-                    id="user-menu-item-0"
-                  >
-                    Your Profile
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    tabIndex={-1}
-                    id="user-menu-item-1"
-                  >
-                    Settings
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    tabIndex={-1}
-                    id="user-menu-item-2"
-                  >
-                    Sign out
-                  </Link>
-                </div>
+                <AuthButtons></AuthButtons>
               </div>
             </div>
           </div>
