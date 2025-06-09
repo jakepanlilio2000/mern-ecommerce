@@ -53,6 +53,13 @@ const CarouselComp = ({
   useEffect(() => {
     zoomHighLight();
   }, [isMoving]);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      zoomHighLight();
+    }, 50); // Delay just a bit (adjust as needed)
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <div ref={carouselRef} className="relative">
