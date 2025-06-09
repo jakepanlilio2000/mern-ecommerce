@@ -18,34 +18,35 @@ export default function Home() {
         20% off everything
       </HeaderAnnouncement>
       {/* Carousel */}
-      <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary">
-        <CarouselComp withZoom={true} classToAdd="h-[240px] md:h-[270px] lg:h-[300px] ">
+      <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary h-[290px] md:h-[320px] lg:h-[350px] py-5">
+        {/* need to safelist this in tailwind */}
+        <CarouselComp withZoom={true} classToAdd="h-[240px] md:h-[270px] lg:h-[300px] w-[400px]" targetElement="img">
           <div>
             <img
               src="https://picsum.photos/200/300"
               alt=""
-              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px]"
+              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px] transition-all duration-700 ease-in-out"
             />
           </div>
           <div>
             <img
               src="https://picsum.photos/200/300"
               alt=""
-              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px]"
+              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px] transition-all duration-700 ease-in-out"
             />
           </div>
           <div>
             <img
               src="https://picsum.photos/200/300"
               alt=""
-              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px]"
+              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px] transition-all duration-700 ease-in-out"
             />
           </div>
           <div>
             <img
               src="https://picsum.photos/200/300"
               alt=""
-              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px]"
+              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px] transition-all duration-700 ease-in-out"
             />
           </div>
         </CarouselComp>

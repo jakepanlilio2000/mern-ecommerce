@@ -7,12 +7,15 @@ import "react-multi-carousel/lib/styles.css";
 const CarouselComp = ({
   withZoom,
   children,
-  classToAdd = '',
+  classToAdd = "",
+  targetElement,
 }: {
   withZoom: boolean;
   children: React.ReactNode;
   classToAdd?: string;
+  targetElement?: string;
 }) => {
+  const [isMoving, setIsMoving] = React.useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const zoomHighLight = () => {
@@ -25,20 +28,31 @@ const CarouselComp = ({
     if (activeItems.length === 0) return;
 
     const middleIndex = Math.floor(activeItems.length / 2);
+    const zoomClasses = classToAdd.trim().split(/\s+/);
+    const movingClass = "."; // Or any other class you want during movement
 
     activeItems.forEach((item, index) => {
+      const target = targetElement ? item.querySelector(targetElement) : item;
+
+      if (!target) return;
+
       if (index === middleIndex) {
-        item.classList.add(classToAdd);
+        zoomClasses.forEach((cls) => target.classList.add(cls));
+        if (isMoving) {
+          target.classList.add(movingClass);
+        } else {
+          target.classList.remove(movingClass);
+        }
       } else {
-        item.classList.remove(classToAdd);
+        zoomClasses.forEach((cls) => target.classList.remove(cls));
+        target.classList.remove(movingClass);
       }
     });
   };
 
   useEffect(() => {
-    // Initial zoom after mount
     zoomHighLight();
-  }, []);
+  }, [isMoving]);
 
   return (
     <div ref={carouselRef} className="relative">
@@ -52,7 +66,12 @@ const CarouselComp = ({
         infinite={false}
         rewind={true}
         itemClass="flex justify-center items-center transition-transform duration-300 ease-in-out"
-        afterChange={() => zoomHighLight()}
+        beforeChange={() => {
+          setIsMoving(true);
+        }}
+        afterChange={() => {
+          setIsMoving(false);
+        }}
         containerClass="carousel-container"
       >
         {children}
