@@ -5,25 +5,49 @@ import HeaderSeperator from "../components/ui/headerSeperator";
 import Review from "../components/review";
 import ButtonHelper from "../components/ui/button-helper";
 import ProductDisplay from "../components/product-display";
+import { useState, useEffect } from "react";
 
 // might need to refactor best seller, on sale, etc
 
 export default function Home() {
+
   return (
     <>
       {/* Announcement */}
-      <HeaderAnnouncement className="bg-secondary text-center text-6xl uppercase font-semibold py-5">20% off everything</HeaderAnnouncement>
+      <HeaderAnnouncement className="bg-auth-bg text-center text-6xl uppercase font-semibold py-5">
+        20% off everything
+      </HeaderAnnouncement>
       {/* Carousel */}
-      <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary">
-        <CarouselComp withZoom={true} classToAdd="scale-150">
+      <section className="rounded-b-[250px] bg-linear-to-b from-primary to-secondary h-[290px] md:h-[320px] lg:h-[350px] py-5">
+        {/* need to safelist this in tailwind */}
+        <CarouselComp withZoom={true} classToAdd="h-[240px] md:h-[270px] lg:h-[300px] w-[400px]" targetElement="img">
           <div>
-            <img src="https://picsum.photos/200/300" alt="" className="h-[200px] w-[300px]"/>
+            <img
+              src="https://picsum.photos/200/300"
+              alt=""
+              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px] transition-all duration-700 ease-in-out"
+            />
           </div>
           <div>
-            <img src="https://picsum.photos/200/300" alt="" className="h-[200px] w-[300px]" />
+            <img
+              src="https://picsum.photos/200/300"
+              alt=""
+              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px] transition-all duration-700 ease-in-out"
+            />
           </div>
           <div>
-            <img src="https://picsum.photos/200/300" alt="" className="h-[200px] w-[300px]" />
+            <img
+              src="https://picsum.photos/200/300"
+              alt=""
+              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px] transition-all duration-700 ease-in-out"
+            />
+          </div>
+          <div>
+            <img
+              src="https://picsum.photos/200/300"
+              alt=""
+              className="h-[160px] md:h-[180px] lg:h-[200px] w-[300px] transition-all duration-700 ease-in-out"
+            />
           </div>
         </CarouselComp>
       </section>
